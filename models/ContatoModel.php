@@ -18,6 +18,7 @@ use Yii;
  */
 class ContatoModel extends \yii\db\ActiveRecord
 {
+    public $url;
     /**
      * {@inheritdoc}
      */
@@ -32,10 +33,10 @@ class ContatoModel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'sobrenome', 'telefone'], 'required'],
+            [['nome', 'telefone'], 'required'],
             [['nome'], 'string', 'max' => 125],
             [['sobrenome'], 'string', 'max' => 120],
-            [['foto'], 'file', 'extensions'=>'jpg,png,jpeg'],
+            [['url'], 'file', 'extensions'=>'jpg,png,jpeg'],
             [['telefone'], 'string', 'max' => 15],
             [['email'], 'string', 'max' => 200],
             [['endereco'], 'string', 'max' => 200],

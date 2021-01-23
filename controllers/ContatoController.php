@@ -8,6 +8,7 @@ use app\models\ContatoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ContatoController implements the CRUD actions for ContatoModel model.
@@ -67,6 +68,14 @@ class ContatoController extends Controller
         $model = new ContatoModel();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->foto = UploadedFile::getInstance($model, 'foto');
+            if ($model->foto!==null) {
+                $arquivo = $model->nome.'-'.$model->idContato;
+                $model->foto->saveAs('pictureUpload/'.$arquivo.'.'.$model->foto->extension);
+                $model->url = 'pictureUpload/'.$arquivo.'.'.$model->foto->extension;
+            }
+            $model->save();
+            
             return $this->redirect(['view', 'id' => $model->idContato]);
         }
 
@@ -87,6 +96,14 @@ class ContatoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->foto = UploadedFile::getInstance($model, 'foto');
+            if ($model->foto!==null) {
+                $arquivo = $model->nome.'-'.$model->idContato;
+                $model->foto->saveAs('pictureUpload/'.$arquivo.'.'.$model->foto->extension);
+                $model->url = 'pictureUpload/'.$arquivo.'.'.$model->foto->extension;
+            }
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->idContato]);
         }
 
