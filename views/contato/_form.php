@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 <div class="contato-model-form">
 
     <?php $form = ActiveForm::begin([
-        
+        'options' => ['enctype' => 'multipart/form-data'],
     ]); ?>
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
@@ -30,8 +30,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'foto')->fileInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Voltar', ['view', 'id' => $model->idContato], ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Voltar', ['index'], ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

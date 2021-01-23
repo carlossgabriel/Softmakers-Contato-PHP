@@ -32,7 +32,7 @@ $this->title = 'Contatos';
             'telefone',
             'email:email',
             //'endereco',
-            'instagram',
+            //'instagram',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -5,9 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ContatoModel */
 
-$this->title = 'Create Contato Model';
-$this->params['breadcrumbs'][] = ['label' => 'Contato Models', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Adicionar Contato';
 ?>
 <div class="contato-model-create">
 

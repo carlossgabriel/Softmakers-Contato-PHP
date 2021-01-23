@@ -1,6 +1,11 @@
 <?php
 
+use yii\helpers\Html;
+use yii\grid\GridView;
+
 /* @var $this yii\web\View */
+/* @var $searchModel app\models\ContatoSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Softmakers Agenda';
 ?>
@@ -10,33 +15,31 @@ $this->title = 'Softmakers Agenda';
         <h1>Agenda</h1>
     </div>
 
-    <div class="body-content">
+    <div class="contato-model-index">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+    <p>
+        <?= Html::a('Adicionar contato', ['/contato/create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
-                <p>Lorem ipsum dolor sit amet.</p>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-                <p><a class="btn btn-default" href="#">Yii &raquo;</a></p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <h2>Heading</h2>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
 
-                    <p>Lorem ipsum dolor sit amet.</p>
+            //'idContato',
+            //'foto',
+            'nome',
+            'sobrenome',
+            'telefone',
+            'email:email',
+            //'endereco',
+            //'instagram',
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
 
-                    <p><a class="btn btn-default" href="#">Yii &raquo;</a></p>
-                </div>
-            <div class="row">
-                    <div class="col-lg-4">
-                        <h2>Heading</h2>
 
-                        <p>Lorem ipsum dolor sit amet.</p>
-
-                        <p><a class="btn btn-default" href="#">Yii &raquo;</a></p>
-                    </div>
-            </div>
-
-            </div>
-        </div>
+</div>
