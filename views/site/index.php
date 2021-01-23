@@ -7,7 +7,7 @@ $this->title = 'Softmakers Agenda';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Agenda!</h1>
+        <h1>Agenda</h1>
     </div>
 
     <div class="body-content">

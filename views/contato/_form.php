@@ -31,6 +31,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Voltar', ['view', 'id' => $model->idContato], ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
