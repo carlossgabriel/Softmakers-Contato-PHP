@@ -69,7 +69,9 @@ class ContatoController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->foto = UploadedFile::getInstance($model, 'foto');
+            
             if ($model->foto!==null) {
+                
                 $arquivo = $model->nome.'-'.$model->idContato;
                 $model->foto->saveAs('pictureUpload/'.$arquivo.'.'.$model->foto->extension);
                 $model->url = 'pictureUpload/'.$arquivo.'.'.$model->foto->extension;

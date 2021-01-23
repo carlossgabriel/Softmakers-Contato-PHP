@@ -18,15 +18,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sobrenome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'foto')->fileInput() ?>
-
+    
     <?= $form->field($model, 'telefone')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'endereco')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'instagram')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'foto')->fileInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
