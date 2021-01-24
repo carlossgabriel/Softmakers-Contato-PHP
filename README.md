@@ -1,21 +1,3 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
-
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![build](https://github.com/yiisoft/yii2-app-basic/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-basic/actions?query=workflow%3Abuild)
 
 DIRECTORY STRUCTURE
 -------------------
@@ -34,99 +16,77 @@ DIRECTORY STRUCTURE
 
 
 
-REQUIREMENTS
+REQUISITOS MINIMOS:
+
+- PHP 5.6.0
+- MySQL & Apache
+- COMPOSER
+
+INSTALAÇÃO E CONFIGURAÇÃO
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.6.0.
+### Instalar PHP sem o Xampp
+
+Para utilização no Windows, o [Php](http://getcomposer.org/) pode ser instalado fazendo o download do Zip de alguma das versões disponíveis em: (https://windows.php.net/download)
+
+Ao finalizar o processo de extração da pasta do php, é necessário adicionar o caminho do executável nas variáveis de ambiente.
+Selecionando Path e clicando em editar as variáveis do sistema ou do usuário (fica a escolha do utilizador), deve ser adicionado o caminho do executável.
+
+### Instalar PHP com o Xampp
+
+Sendo o processo mais prático para instalação do PHP, o [Xampp](https://www.apachefriends.org/pt_br/index.html) permite que com um executável sejam instalados os seguintes programas que são necessários para a aplicação:
+* PHP
+* Apache
+* MySQL
+
+### Instalar Composer
+
+Realize o processo de instalação executando o instalador disponível no site: [Composer](https://getcomposer.org/Composer-Setup.exe). 
+É necessário que o PHP já esteja instalado no sistema.
 
 
-INSTALLATION
-------------
-
-### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this project template using the following command:
-
-~~~
-composer create-project --prefer-dist yiisoft/yii2-app-basic basic
-~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
-
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install with Docker
-
-Update your vendor packages
-
-    docker-compose run --rm php composer update --prefer-dist
-    
-Run the installation triggers (creating cookie validation code)
-
-    docker-compose run --rm php composer install    
-    
-Start the container
-
-    docker-compose up -d
-    
-You can then access the application through the following URL:
-
-    http://127.0.0.1:8000
-
-**NOTES:** 
-- Minimum required Docker engine version `17.04` for development (see [Performance tuning for volume mounts](https://docs.docker.com/docker-for-mac/osxfs-caching/))
-- The default configuration uses a host-volume in your home directory `.docker-composer` for composer caches
-
-
-CONFIGURATION
+CONFIGURAÇÃO
 -------------
 
-### Database
+### Projeto
 
-Edit the file `config/db.php` with real data, for example:
+Agora com o ambiente pronto, faça o clone do repositório no local desejado com o <git clone https://github.com/carlossgabriel/Softmakers-Contato-PHP.git> ou realizando o donwload do projeto.
+
+
+### Banco de dados
+
+Para utilizar a aplicação é necessário criar o banco de dados com as tabelas necessárias
+
+A aplicação precisa identificar o banco de dados e a conexão com o mesmo. Para isso, as configurações estão no diretório <agenda\config\db.php> e estará listada a seguinte configuração para testes:
 
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=agenda',
     'username' => 'root',
-    'password' => '1234',
+    'password' => '',
     'charset' => 'utf8',
 ];
 ```
 
-**NOTES:**
-- Yii won't create the database for you, this has to be done manually before you can access it.
-- Check and edit the other files in the `config/` directory to customize your application as required.
-- Refer to the README in the `tests` directory for information specific to basic application tests.
+**NOTA:**
+- O framework não cria a base de dados, logo é necessário realizar o processo manual:
+1. No Xampp Controll Panel, com o Apache e o MySQL iniciados, selecione para abrir o gerenciador de banco de dados clicando em <Admin>
+2. Com o SGBD aberto, selecione <Novo> e então vá para a aba <Importar>
+3. Com a aba de importação aberta, selecione o arquivo <agenda.sql> que está localizado no diretório <agenda/bdscript/> e clique para Executar.
 
+CONFIGURAÇÃO
+-------------
+
+### Iniciar a aplicação
+
+Para inicar o projeto é necessário executar o comando baixo no terminal, estando na raíz da aplicação:
+
+```
+php yii serve
+```
+Pronto, agora é só acessar o localhost:
+<http://localhost:8080/index.php>
 
 TESTING
 -------
