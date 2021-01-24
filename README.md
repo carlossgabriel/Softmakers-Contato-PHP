@@ -1,6 +1,6 @@
 SCREENSHOTS
 ------------
-![Index](public/screenshot1.jpg)
+![Index](screenshot1.jpg)
 
 REQUISITOS MINIMOS:
 
