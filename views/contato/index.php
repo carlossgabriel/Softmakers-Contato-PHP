@@ -23,7 +23,6 @@ $this->title = 'Contatos';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             //'idContato',
             //'foto',

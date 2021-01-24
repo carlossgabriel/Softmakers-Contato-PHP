@@ -27,9 +27,6 @@ $this->title = 'Softmakers Agenda';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            //'idContato',
             //'foto',
             'nome',
             'sobrenome',
