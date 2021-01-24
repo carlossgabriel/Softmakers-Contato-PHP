@@ -11,7 +11,9 @@ $this->title = 'Contatos';
 ?>
 <div class="contato-model-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="jumbotron">
+        <h1>Agenda</h1>
+    </div>
 
     <p>
         <?= Html::a('Adicionar contato', ['create'], ['class' => 'btn btn-success']) ?>

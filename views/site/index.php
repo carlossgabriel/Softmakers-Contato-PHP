@@ -34,7 +34,6 @@ $this->title = 'Softmakers Agenda';
             'email:email',
             //'endereco',
             //'instagram',
-            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

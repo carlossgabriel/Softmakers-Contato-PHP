@@ -38,7 +38,8 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/contato/index']]
+            ['label' => 'Agenda', 'url' => ['/contato/index']],
+            ['label' => 'Adicionar Contato', 'url' => ['/contato/create']]
         ],
     ]);
     NavBar::end();
