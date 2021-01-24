@@ -37,7 +37,7 @@ class ContatoModel extends \yii\db\ActiveRecord
             [['nome'], 'string', 'max' => 125],
             [['sobrenome'], 'string', 'max' => 120],
             [['url'], 'file', 'extensions'=>'jpg,png,jpeg'],
-            [['telefone'], 'string', 'max' => 15],
+            [['telefone'], 'string', 'min' => 9,'max' => 11],
             [['email'], 'string', 'max' => 200],
             [['endereco'], 'string', 'max' => 200],
             [['instagram'], 'string', 'max' => 125],

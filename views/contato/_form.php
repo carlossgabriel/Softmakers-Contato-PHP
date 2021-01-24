@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use borales\extensions\phoneInput\PhoneInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ContatoModel */
@@ -17,9 +18,12 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'sobrenome')->textInput(['maxlength' => true]) ?>
-
     
-    <?= $form->field($model, 'telefone')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'telefone')->widget(PhoneInput::className(), [
+    'jsOptions' => [
+        'preferredCountries' => ['br'],
+    ]
+]); ?>
     
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
     
