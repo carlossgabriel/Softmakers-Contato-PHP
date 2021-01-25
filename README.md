@@ -1,7 +1,3 @@
-SCREENSHOTS
-------------
-![Index](screenshot1.jpg)
-
 REQUISITOS MINIMOS:
 
 - PHP 5.6.0
