@@ -20,22 +20,8 @@ $this->title = 'Softmakers Agenda';
     <p>
         <?= Html::a('Adicionar contato', ['/contato/create'], ['class' => 'btn btn-success']) ?>
     </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            //'foto',
-            'nome',
-            'sobrenome',
-            'telefone',
-            'email:email',
-            //'endereco',
-            //'instagram',
-        ],
-    ]); ?>
-
+    <p>
+        <?= Html::a('Listar contatos', ['/contato/index'], ['class' => 'btn btn-primary']) ?>
+    </p>
 
 </div>

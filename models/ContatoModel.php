@@ -3,7 +3,8 @@
 namespace app\models;
 
 use Yii;
-
+use yii\helpers\Url;
+use yii\helpers\Html;
 /**
  * This is the model class for table "contato".
  *
@@ -60,4 +61,19 @@ class ContatoModel extends \yii\db\ActiveRecord
             'instagram' => 'Instagram',
         ];
     }
+
+    public function actionIndex()
+    {
+        $searchModel = new ContatoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        //$models = $dataProvider->getModels();
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            //'models' => $models,
+        ]);
+    }
+
 }

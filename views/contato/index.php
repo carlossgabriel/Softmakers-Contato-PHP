@@ -25,9 +25,7 @@ $this->title = 'Contatos';
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-
             //'idContato',
-            //'foto',
             'nome',
             'sobrenome',
             'telefone',
