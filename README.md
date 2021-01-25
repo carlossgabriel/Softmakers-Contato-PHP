@@ -58,7 +58,7 @@ return [
 **NOTA:**
 - O framework não cria a base de dados, logo é necessário realizar o processo manual:
 1. No Xampp Controll Panel, com o Apache e o MySQL iniciados, selecione para abrir o gerenciador de banco de dados clicando em <Admin>
-2. Com o SGBD aberto, selecione <Novo> e então vá para a aba <Importar>
+2. Com o SGBD aberto, selecione <Novo>, crie um banco de dados com o nome <agenda> e então vá para a aba <Importar>
 3. Com a aba de importação aberta, selecione o arquivo <agenda.sql> que está localizado no diretório <agenda/bdscript/> e clique para Executar.
 
 CONFIGURAÇÃO
